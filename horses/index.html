@@ -17,7 +17,7 @@
     --gray-light: #e8e4de;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
+  html { scroll-behavior:smooth; overflow-x:hidden; }
   body { background:var(--warm-white); color:var(--charcoal); font-family:'Libre Baskerville',Georgia,serif; overflow-x:hidden; }
   .check-divider { height:12px; background-image:repeating-linear-gradient(90deg,var(--navy) 0px,var(--navy) 12px,white 12px,white 24px); opacity:0.85; }
   nav { background:var(--navy); position:sticky; top:0; z-index:100; box-shadow:0 2px 20px rgba(0,0,0,0.3); }
@@ -123,11 +123,16 @@
   .lightbox-close:hover { opacity:1; }
   .lightbox-caption { position:absolute; bottom:1.5rem; left:50%; transform:translateX(-50%); font-family:'Raleway',sans-serif; font-size:0.8rem; color:rgba(255,255,255,0.6); letter-spacing:0.08em; white-space:nowrap; }
 
+  @media(min-width:769px) {
+    #irvin-paul .horse-body .horse-photos .horse-photo img { max-height:160px; object-fit:cover; width:100%; }
+  }
   @media(max-width:768px) {
     .horse-body,.horse-body.reverse { grid-template-columns:1fr; }
     .horse-body.reverse .horse-photos { order:0; }
     .nav-links { display:none; }
     .others-list { columns:2; }
+    .horse-photo { overflow:hidden; }
+    .horse-photo img { box-shadow:3px 3px 0 var(--blue); max-width:100%; }
   }
 
   /* MOBILE HAMBURGER NAV */
