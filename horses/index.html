@@ -170,7 +170,18 @@
     .nav-links a:last-child { border-bottom: none; }
   }
 
-  
+  /* MENU LABEL */
+  .menu-label {
+    display: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.75);
+    margin-left: 0.5rem;
+  }
+  @media (max-width: 768px) {
+    .menu-label { display: inline; }
     /* Fix photo overflow on mobile */
     img { max-width: 100%; height: auto; }
     .photo-right, .photo-left {
@@ -184,27 +195,6 @@
     /* Fix Bettie father section on photos page */
     .bonus-inner > div { grid-template-columns: 1fr !important; }
     .bonus-section .photo-item { max-width: 100%; }
-  }
-
-  .menu-label {
-    font-family: 'Raleway', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    color: rgba(255,255,255,0.75);
-    margin-left: 0.5rem;
-    display: none;
-  }
-  @media (max-width: 768px) {
-    .menu-label { display: inline; }
-    .hamburger {
-      display: flex;
-      border: 1px solid rgba(255,255,255,0.4);
-      border-radius: 4px;
-      padding: 5px 8px;
-      align-items: center;
-      gap: 5px;
-    }
   }
 </style>
 </head>
