@@ -62,29 +62,12 @@
   @media(max-width:600px){.contact-grid,.photos-row{grid-template-columns:1fr;}.nav-links{display:none;}}
 
   /* MOBILE HAMBURGER NAV */
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 26px;
-    height: 18px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 0;
-  }
-  .hamburger span {
-    display: block;
-    height: 2px;
-    background: white;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-  }
-  .hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-  .hamburger.open span:nth-child(2) { opacity: 0; }
-  .hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-  @media (max-width: 768px) {
-    .hamburger { display: flex; }
+  
+  
+  
+  
+  
+  @media (max-width: 768px) { #hamburger { display: flex !important; } }
     .nav-links {
       display: none !important;
       position: absolute;
@@ -102,20 +85,8 @@
     .nav-links a:last-child { border-bottom: none; }
   }
 
-  /* MENU LABEL */
-  .menu-label {
-    display: none;
-    font-family: 'Raleway', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    color: rgba(255,255,255,0.75);
-    margin-left: 0.5rem;
-  }
-  @media (max-width: 768px) {
-    .menu-label { display: inline; }
+  
     /* Fix photo overflow on mobile */
-    img { max-width: 100%; height: auto; }
     .photo-right, .photo-left {
       float: none !important;
       max-width: 100% !important;
@@ -127,6 +98,13 @@
     /* Fix Bettie father section on photos page */
     .bonus-inner > div { grid-template-columns: 1fr !important; }
     .bonus-section .photo-item { max-width: 100%; }
+  }
+
+  
+  @media (max-width: 768px) {
+    
+    
+  
   }
 </style>
 </head>
@@ -147,9 +125,7 @@
       <li><a href="/guestbook/">Guestbook</a></li>
       <li><a href="/contact/" class="active">Contact</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button><span class="menu-label">MENU</span>
+    <button id="hamburger" aria-label="Menu" style="display:none;background:transparent;border:1px solid rgba(255,255,255,0.4);border-radius:4px;padding:6px 12px;cursor:pointer;color:white;font-family:'Raleway',sans-serif;font-size:0.75rem;font-weight:600;letter-spacing:0.12em;align-items:center;gap:8px;">&#9776; MENU</button>
   </div>
 </nav>
 
