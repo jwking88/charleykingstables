@@ -60,7 +60,8 @@
   
   
   
-  @media (max-width: 768px) { #hamburger { display: flex !important; } }
+  @media (max-width: 768px) {
+    #hamburger { display: flex !important; }
     .nav-links {
       display: none !important;
       position: absolute;
@@ -78,7 +79,8 @@
     .nav-links a:last-child { border-bottom: none; }
   }
 
-  
+
+  @media (max-width: 768px) {
     /* Fix photo overflow on mobile */
     .photo-right, .photo-left {
       float: none !important;
@@ -91,13 +93,6 @@
     /* Fix Bettie father section on photos page */
     .bonus-inner > div { grid-template-columns: 1fr !important; }
     .bonus-section .photo-item { max-width: 100%; }
-  }
-
-  
-  @media (max-width: 768px) {
-    
-    
-  
   }
 </style>
 </head>

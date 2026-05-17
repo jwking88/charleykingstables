@@ -316,7 +316,8 @@
   
   
   
-  @media (max-width: 768px) { #hamburger { display: flex !important; } }
+  @media (max-width: 768px) {
+    #hamburger { display: flex !important; }
     .nav-links {
       display: none !important;
       position: absolute;
@@ -334,7 +335,8 @@
     .nav-links a:last-child { border-bottom: none; }
   }
 
-  
+
+  @media (max-width: 768px) {
     /* Fix photo overflow on mobile */
     .photo-right, .photo-left {
       float: none !important;
@@ -347,13 +349,6 @@
     /* Fix Bettie father section on photos page */
     .bonus-inner > div { grid-template-columns: 1fr !important; }
     .bonus-section .photo-item { max-width: 100%; }
-  }
-
-  
-  @media (max-width: 768px) {
-    
-    
-  
   }
 </style>
 </head>
@@ -498,16 +493,16 @@
 
       <p>Charley and Bettie moved to the Sharon Farm Stables of Crawfordville, Georgia in the late 1960s in an attempt to create a breeding farm. After a string of hard luck in the 1970s, Charley and Bettie retired from the horse business.</p>
 
-      <div class="photo-right">
-        <a href="../Assets/King.jpg" class="lightbox-trigger" data-caption="Charley & Bettie King">
-          <img src="../Assets/King.jpg" alt="Charley and Bettie King" />
-        </a>
-        <p class="photo-caption">Charley &amp; Bettie King</p>
-      </div>
-
       <p>They lived their lives out among the people they loved in Crawfordville, Georgia. They had three sons and four grandchildren. They were married for almost 45 years until Charley passed away in 1999. Bettie passed in April, 2011.</p>
 
       <div class="clearfix"></div>
+
+      <div class="photo-center">
+        <a href="../Assets/King.jpg" class="lightbox-trigger" data-caption="Charley & Bettie King">
+          <img src="../Assets/King.jpg" alt="Charley and Bettie King" style="max-width:320px;" />
+        </a>
+        <p class="photo-caption">Charley &amp; Bettie King</p>
+      </div>
 
       <div class="photo-center">
         <a href="../Assets/scan0001.jpg" class="lightbox-trigger" data-caption="Charley with one of his last horses, driven by Charley King Jr. — Syracuse, NY, 1981">

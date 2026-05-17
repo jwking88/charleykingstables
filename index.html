@@ -623,7 +623,8 @@
   
   
   
-  @media (max-width: 768px) { #hamburger { display: flex !important; } }
+  @media (max-width: 768px) {
+    #hamburger { display: flex !important; }
     .nav-links {
       display: none !important;
       position: absolute;
@@ -641,7 +642,8 @@
     .nav-links a:last-child { border-bottom: none; }
   }
 
-  
+
+  @media (max-width: 768px) {
     /* Fix photo overflow on mobile */
     .photo-right, .photo-left {
       float: none !important;
@@ -654,13 +656,6 @@
     /* Fix Bettie father section on photos page */
     .bonus-inner > div { grid-template-columns: 1fr !important; }
     .bonus-section .photo-item { max-width: 100%; }
-  }
-
-  
-  @media (max-width: 768px) {
-    
-    
-  
   }
 </style>
 </head>
@@ -798,7 +793,8 @@
         <div class="horse-desc">Top free-for-all pacer of the mid-1960s with nearly $200,000 in earnings. Competed in the famed 1966 Pace of the Century at Yonkers.</div>
       </a>
 
-      <a href="horses.html#annette-sue" class="horse-card">
+      <a href="/horses/#annette-sue" class="horse-card">
+        <img src="Assets/king 057.jpg" alt="Annette Sue" class="horse-card-img" />
         <div class="horse-era">1950s · Trotter</div>
         <div class="horse-name">Annette Sue</div>
         <div class="horse-desc">Won a record-setting 16 straight races. Combined with Ladies First for over $300,000 in career earnings — more than $2 million in today's money.</div>
