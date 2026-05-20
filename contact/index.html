@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Charley King – Contact</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{--navy:#1a2e4a;--blue:#2657a0;--cream:#f8f4ee;--warm-white:#fdfaf6;--gold:#c9a84c;--gold-light:#e8c97a;--charcoal:#2c2c2c;--gray:#6b6b6b;--gray-light:#e8e4de;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--warm-white);color:var(--charcoal);font-family:'Libre Baskerville',Georgia,serif;overflow-x:hidden;}
+  .check-divider{height:12px;background-image:repeating-linear-gradient(90deg,var(--navy) 0px,var(--navy) 12px,white 12px,white 24px);opacity:0.85;}
+  nav{background:var(--navy);position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,0.3);}
+  .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;}
+  .nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;color:var(--gold-light);padding:1rem 0;text-decoration:none;}
+  .nav-links{display:flex;list-style:none;}
+  .nav-links a{display:block;color:rgba(255,255,255,0.82);text-decoration:none;font-family:'Raleway',sans-serif;font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:1.2rem 1rem;transition:color 0.2s;border-bottom:3px solid transparent;}
+  .nav-links a:hover,.nav-links a.active{color:var(--gold-light);border-bottom-color:var(--gold);background:rgba(255,255,255,0.05);}
+  .page-header{background:var(--navy);padding:4rem 2rem 3.5rem;text-align:center;position:relative;overflow:hidden;}
+  .page-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(38,87,160,0.4) 0%,transparent 70%);}
+  .page-header-content{position:relative;z-index:1;}
+  .page-eyebrow{font-family:'Raleway',sans-serif;font-size:0.7rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;justify-content:center;gap:1rem;}
+  .page-eyebrow::before,.page-eyebrow::after{content:'';display:inline-block;width:30px;height:1px;background:var(--gold);opacity:0.5;}
+  .page-header h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:white;}
+  .page-header h1 em{font-style:italic;color:var(--gold-light);}
+  .page-header-sub{font-family:'Playfair Display',serif;font-style:italic;color:rgba(255,255,255,0.55);font-size:1rem;margin-top:0.75rem;}
+
+  .main-wrap{max-width:800px;margin:0 auto;padding:4rem 2rem;}
+
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-bottom:4rem;}
+
+  .contact-card{background:var(--cream);border:1px solid var(--gray-light);padding:2rem;}
+  .contact-card h2{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--navy);margin-bottom:0.75rem;padding-bottom:0.75rem;border-bottom:2px solid var(--gold);}
+  .contact-card p{font-family:'Raleway',sans-serif;font-size:0.85rem;line-height:1.75;color:var(--charcoal);margin-bottom:1rem;}
+  .contact-card a{display:inline-block;font-family:'Raleway',sans-serif;font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);text-decoration:none;border-bottom:2px solid transparent;transition:border-color 0.2s;}
+  .contact-card a:hover{border-bottom-color:var(--blue);}
+
+  .maintainer{text-align:center;padding:3rem 2rem;background:var(--navy);color:white;margin-bottom:3rem;}
+  .maintainer h2{font-family:'Playfair Display',serif;font-style:italic;font-size:1.5rem;color:var(--gold-light);margin-bottom:0.75rem;}
+  .maintainer p{font-family:'Raleway',sans-serif;font-size:0.85rem;line-height:1.75;color:rgba(255,255,255,0.65);max-width:480px;margin:0 auto 1.5rem;}
+  .maintainer a{display:inline-block;font-family:'Raleway',sans-serif;font-size:0.78rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--navy);background:var(--gold);text-decoration:none;padding:0.85rem 2rem;transition:background 0.2s;}
+  .maintainer a:hover{background:var(--gold-light);}
+
+  .photos-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+  .photo-item a{display:block;}
+  .photo-item img{width:100%;display:block;filter:sepia(12%) contrast(1.06);border:3px solid white;box-shadow:4px 4px 0 var(--blue),8px 8px 0 rgba(38,87,160,0.12);cursor:zoom-in;transition:filter 0.2s;}
+  .photo-item img:hover{filter:sepia(0%) contrast(1.1);}
+
+  footer{background:#101a29;padding:2.5rem 2rem;text-align:center;}
+  .footer-text{font-family:'Raleway',sans-serif;font-size:0.75rem;color:rgba(255,255,255,0.3);line-height:1.8;}
+  .footer-text a{color:var(--gold);text-decoration:none;}
+  .footer-name{font-family:'Playfair Display',serif;font-style:italic;font-size:1rem;color:rgba(255,255,255,0.5);margin-bottom:0.5rem;}
+
+  .lightbox{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;}
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:90vw;max-height:88vh;border:3px solid white;}
+  .lightbox-close{position:absolute;top:1.5rem;right:2rem;font-size:2.5rem;color:white;cursor:pointer;line-height:1;opacity:0.7;}
+  .lightbox-close:hover{opacity:1;}
+
+  @media(max-width:600px){.contact-grid,.photos-row{grid-template-columns:1fr;}.nav-links{display:none;}}
+
+  /* MOBILE HAMBURGER NAV */
+  
+  
+  
+  
+  
+  @media (max-width: 768px) {
+    #hamburger { display: flex !important; }
+    .nav-links {
+      display: none !important;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--navy);
+      flex-direction: column;
+      padding: 0.5rem 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      z-index: 200;
+    }
+    .nav-links.open { display: flex !important; }
+    .nav-links a { padding: 0.9rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.08); font-size:0.85rem; }
+    .nav-links a:last-child { border-bottom: none; }
+  }
+
+
+  @media (max-width: 768px) {
+    /* Fix photo overflow on mobile */
+    .photo-right, .photo-left {
+      float: none !important;
+      max-width: 100% !important;
+      margin: 1rem 0 !important;
+    }
+    .photo-center img, .photo-panoramic img { max-width: 100% !important; }
+    /* Fix bio-grid on mobile */
+    .bio-grid { grid-template-columns: 1fr !important; }
+    /* Fix Bettie father section on photos page */
+    .bonus-inner > div { grid-template-columns: 1fr !important; }
+    .bonus-section .photo-item { max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="check-divider"></div>
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="/">The Charley King Stables</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/biography/">Biography</a></li>
+      <li><a href="/horses/">Horses</a></li>
+      <li><a href="/photos/">Photos</a></li>
+      <li><a href="/recordings/">Recordings</a></li>
+      <li><a href="/eliking/">Eli King</a></li>
+      <li><a href="/brooke/">Brooke</a></li>
+      <li><a href="/crawfordville/">Crawfordville</a></li>
+      <li><a href="/guestbook/">Guestbook</a></li>
+      <li><a href="/contact/" class="active">Contact</a></li>
+    </ul>
+    <button id="hamburger" aria-label="Menu" style="display:none;background:transparent;border:1px solid rgba(255,255,255,0.4);border-radius:4px;padding:6px 12px;cursor:pointer;color:white;font-family:'Raleway',sans-serif;font-size:0.75rem;font-weight:600;letter-spacing:0.12em;align-items:center;gap:8px;">&#9776; MENU</button>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-content">
+    <div class="page-eyebrow">The Charley King Stables</div>
+    <h1>Get in <em>Touch</em></h1>
+    <p class="page-header-sub">We'd love to hear from anyone who knew the King family</p>
+  </div>
+</div>
+<div class="check-divider" style="opacity:0.4;"></div>
+
+<div class="main-wrap">
+
+  <div class="maintainer">
+    <h2>Site Maintainer</h2>
+    <p>This site is maintained by <strong>Wyatt King</strong>, grandson of Charley King. If you have memories, photos, or information you'd like to share about Charley, Bettie, the Ohio Valley Stables, or the Sharon Farm Stables, please reach out.</p>
+    <a href="mailto:jwyattking88@gmail.com">Send an Email</a>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-card">
+      <h2>Share a Memory</h2>
+      <p>Did you know Charley or Bettie King? Race against the Ohio Valley Stables? Work at the Sharon Farm? We're always looking to add to the story.</p>
+      <a href="/guestbook/">Sign the Guestbook</a>
+    </div>
+    <div class="contact-card">
+      <h2>Share a Photo</h2>
+      <p>Have photos from the racing years, the stables, or the King family that aren't on this site? We'd love to include them. Reach out by email.</p>
+      <a href="mailto:jwyattking88@gmail.com">Email Wyatt</a>
+    </div>
+  </div>
+
+  <div class="photos-row">
+    <div class="photo-item">
+      <a href="../Assets/King 029.jpg" class="lightbox-trigger" data-caption="Charles King and Family">
+        <img src="../Assets/King 029.jpg" alt="Charles King and Family" />
+      </a>
+    </div>
+    <div class="photo-item">
+      <a href="../Assets/king 066.jpg" class="lightbox-trigger" data-caption="The King Family">
+        <img src="../Assets/king 066.jpg" alt="The King Family" />
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p class="footer-name">The Charley King Stables</p>
+  <p class="footer-text">
+    A tribute to Charles Lafayette King IV (April 2, 1922 – 1999) and Bettie King.<br />
+    Site maintained by Wyatt King · <a href="mailto:jwyattking88@gmail.com">jwyattking88@gmail.com</a>
+  </p>
+</footer>
+<div class="check-divider" style="opacity:0.4;"></div>
+
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="" />
+</div>
+<script>
+  const triggers=document.querySelectorAll('.lightbox-trigger');
+  const lightbox=document.getElementById('lightbox');
+  const lbImg=document.getElementById('lightbox-img');
+  const lbClose=document.getElementById('lightbox-close');
+  triggers.forEach(t=>{t.addEventListener('click',e=>{e.preventDefault();lbImg.src=t.getAttribute('href');lightbox.classList.add('open');});});
+  lbClose.addEventListener('click',()=>lightbox.classList.remove('open'));
+  lightbox.addEventListener('click',e=>{if(e.target===lightbox)lightbox.classList.remove('open');});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')lightbox.classList.remove('open');});
+</script>
+<script>
+  (function() {
+    var hb = document.getElementById('hamburger');
+    var nl = document.querySelector('.nav-links');
+    if (hb && nl) {
+      hb.addEventListener('click', function() {
+        hb.classList.toggle('open');
+        nl.classList.toggle('open');
+      });
+      nl.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() {
+          hb.classList.remove('open');
+          nl.classList.remove('open');
+        });
+      });
+    }
+  })();
+</script>
+</body>
+</html>

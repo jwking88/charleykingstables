@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Charley King Stables</title>
+<meta name="description" content="A tribute to Charley King, one of the top harness horsemen of the 1950s and 60s, and the Ohio Valley Stables." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #1a2e4a;
+    --blue: #2657a0;
+    --blue-light: #3a72c4;
+    --cream: #f8f4ee;
+    --warm-white: #fdfaf6;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --charcoal: #2c2c2c;
+    --gray: #6b6b6b;
+    --gray-light: #e8e4de;
+    --sepia: #a07850;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--warm-white);
+    color: var(--charcoal);
+    font-family: 'Libre Baskerville', Georgia, serif;
+    overflow-x: hidden;
+  }
+
+  /* ── CHECKERED UTILITY ── */
+  .check-divider {
+    height: 12px;
+    background-image: repeating-linear-gradient(
+      90deg,
+      var(--navy) 0px, var(--navy) 12px,
+      white 12px, white 24px
+    );
+    opacity: 0.85;
+  }
+  .check-divider.gold {
+    background-image: repeating-linear-gradient(
+      90deg,
+      var(--gold) 0px, var(--gold) 12px,
+      white 12px, white 24px
+    );
+    opacity: 0.5;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--navy);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--gold-light);
+    padding: 1rem 0;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 0;
+  }
+  .nav-links a {
+    display: block;
+    color: rgba(255,255,255,0.82);
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 1.2rem 1rem;
+    transition: color 0.2s, background 0.2s;
+    border-bottom: 3px solid transparent;
+  }
+  .nav-links a:hover {
+    color: var(--gold-light);
+    border-bottom-color: var(--gold);
+    background: rgba(255,255,255,0.05);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(38,87,160,0.4) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 50%, rgba(38,87,160,0.3) 0%, transparent 60%);
+  }
+  /* subtle noise texture */
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.3;
+    pointer-events: none;
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .hero-eyebrow {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    white-space: nowrap;
+  }
+  .hero-eyebrow::before,
+  .hero-eyebrow::after {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.6;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 900;
+    color: white;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.5rem;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+    display: block;
+  }
+  .hero-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: rgba(255,255,255,0.65);
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.02em;
+  }
+  .hero-years {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+  }
+  .hero-years span { color: var(--gold); font-size: 1.2em; }
+
+  /* racing silks icon */
+  .silks-icon {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 2.5rem;
+    position: relative;
+  }
+  .silks-icon svg { width: 100%; height: 100%; }
+
+  .hero-photo-frame {
+    width: 420px;
+    margin: 0 auto 2.5rem;
+    position: relative;
+  }
+  .hero-photo-frame img {
+    width: 100%;
+    display: block;
+    border: 4px solid rgba(255,255,255,0.15);
+    filter: sepia(20%) contrast(1.05);
+  }
+  .hero-photo-frame::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border: 1px solid var(--gold);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  .hero-caption {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+    margin-top: 0.75rem;
+  }
+
+  .hero-dedication {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 2px;
+    padding: 1.75rem 2.5rem;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.7;
+    max-width: 560px;
+    margin: 0 auto 2.5rem;
+  }
+  .hero-dedication strong {
+    font-style: normal;
+    color: var(--gold-light);
+    display: block;
+    font-size: 0.85rem;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .btn {
+    display: inline-block;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.9rem 2rem;
+    border-radius: 1px;
+    transition: all 0.25s;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-outline {
+    border: 1px solid rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.85);
+  }
+  .btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold-light);
+    transform: translateY(-1px);
+  }
+
+  /* ── MAIN CONTENT ── */
+  .section { padding: 5rem 2rem; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+
+  .section-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    max-width: 40px;
+    height: 1px;
+    background: var(--blue);
+    opacity: 0.4;
+  }
+  h2.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+  h2.section-title em { font-style: italic; color: var(--blue); }
+
+  /* ── QUICK BIO ── */
+  .bio-section { background: var(--cream); }
+  .bio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .bio-photo {
+    position: relative;
+  }
+  .bio-photo img {
+    width: 100%;
+    display: block;
+    filter: sepia(15%) contrast(1.08);
+    border: 3px solid white;
+    box-shadow: 6px 6px 0 var(--blue), 12px 12px 0 rgba(38,87,160,0.15);
+  }
+  .bio-photo-caption {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--gray);
+    text-align: center;
+    margin-top: 1rem;
+    font-style: italic;
+  }
+  .bio-text p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--charcoal);
+    margin-bottom: 1.25rem;
+  }
+  
+  .bio-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--blue);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s, color 0.2s;
+    margin-top: 0.5rem;
+  }
+  .bio-link:hover { border-bottom-color: var(--blue); color: var(--navy); }
+  .bio-link::after { content: '→'; }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: var(--navy);
+    padding: 3rem 2rem;
+  }
+  .stats-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+  }
+  .stat { position: relative; }
+  .stat + .stat::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 15%; bottom: 15%;
+    width: 1px;
+    background: rgba(255,255,255,0.12);
+  }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: var(--gold-light);
+    display: block;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .stat-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+  }
+
+  /* ── HORSES GRID ── */
+  .horses-section { background: var(--warm-white); }
+  .horses-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 2.5rem;
+    background: var(--gray-light);
+  }
+  .horse-card {
+    background: white;
+    padding: 2rem;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .horse-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--blue);
+    transform: scaleX(0);
+    transition: transform 0.25s;
+    transform-origin: left;
+  }
+  .horse-card:hover { background: #f0f5fc; }
+  .horse-card:hover::before { transform: scaleX(1); }
+  .horse-era {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .horse-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+  .horse-desc {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: var(--gray);
+  }
+  .horse-card-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    margin-bottom: 1.25rem;
+    filter: sepia(10%) contrast(1.05);
+    display: block;
+  }
+
+  /* ── GUESTBOOK PREVIEW ── */
+  .guestbook-section { background: var(--cream); }
+  .guestbook-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    margin-top: 2rem;
+  }
+  .guestbook-entries { display: flex; flex-direction: column; gap: 1.25rem; }
+  .guestbook-entry {
+    background: white;
+    border-left: 3px solid var(--blue);
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+  .entry-name {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+  .entry-text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--charcoal);
+  }
+
+  .guestbook-form-wrap h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+  .guestbook-form-wrap p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.85rem;
+    color: var(--gray);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  .guestbook-form-wrap a.btn {
+    margin-top: 0.5rem;
+  }
+
+  /* ── PAGES NAV ── */
+  .pages-nav { background: var(--navy); padding: 4rem 2rem; }
+  .pages-nav-inner { max-width: 1100px; margin: 0 auto; }
+  .pages-nav h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .pages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.08);
+  }
+  .page-tile {
+    background: rgba(255,255,255,0.04);
+    padding: 2rem 1.5rem;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    transition: background 0.2s;
+    display: block;
+  }
+  .page-tile:hover { background: rgba(255,255,255,0.1); }
+  .page-tile-icon { font-size: 1.5rem; margin-bottom: 0.75rem; display: block; }
+  .page-tile-name {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+  .page-tile-desc {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.5;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #101a29;
+    padding: 2.5rem 2rem;
+    text-align: center;
+  }
+  .footer-text {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.3);
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+  }
+  .footer-text a {
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .footer-name {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 0.5rem;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .bio-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .stat + .stat::before { display: none; }
+    .horses-grid { grid-template-columns: 1fr; }
+    .guestbook-grid { grid-template-columns: 1fr; }
+    .pages-grid { grid-template-columns: repeat(2, 1fr); }
+    .nav-links { display: none; }
+    .hero { padding: 3rem 1.5rem; }
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-content > * {
+    animation: fadeUp 0.7s ease both;
+  }
+  .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+  .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+  .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
+  .hero-content > *:nth-child(5) { animation-delay: 0.5s; }
+  .hero-content > *:nth-child(6) { animation-delay: 0.6s; }
+
+  /* MOBILE HAMBURGER NAV */
+  
+  
+  
+  
+  
+  @media (max-width: 768px) {
+    #hamburger { display: flex !important; }
+    .nav-links {
+      display: none !important;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--navy);
+      flex-direction: column;
+      padding: 0.5rem 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      z-index: 200;
+    }
+    .nav-links.open { display: flex !important; }
+    .nav-links a { padding: 0.9rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.08); font-size:0.85rem; }
+    .nav-links a:last-child { border-bottom: none; }
+  }
+
+
+  @media (max-width: 768px) {
+    /* Fix photo overflow on mobile */
+    .photo-right, .photo-left {
+      float: none !important;
+      max-width: 100% !important;
+      margin: 1rem 0 !important;
+    }
+    .photo-center img, .photo-panoramic img { max-width: 100% !important; }
+    /* Fix bio-grid on mobile */
+    .bio-grid { grid-template-columns: 1fr !important; }
+    /* Fix Bettie father section on photos page */
+    .bonus-inner > div { grid-template-columns: 1fr !important; }
+    .bonus-section .photo-item { max-width: 100%; }
+    .hero-photo-frame { width: 260px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- CHECKERED TOP STRIPE -->
+<div class="check-divider"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">The Charley King Stables</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="/biography/">Biography</a></li>
+      <li><a href="/horses/">Horses</a></li>
+      <li><a href="/photos/">Photos</a></li>
+      <li><a href="/recordings/">Recordings</a></li>
+      <li><a href="/eliking/">Eli King</a></li>
+      <li><a href="/brooke/">Brooke</a></li>
+      <li><a href="/crawfordville/">Crawfordville</a></li>
+      <li><a href="/guestbook/">Guestbook</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+    <button id="hamburger" aria-label="Menu" style="display:none;background:transparent;border:1px solid rgba(255,255,255,0.4);border-radius:4px;padding:6px 12px;cursor:pointer;color:white;font-family:'Raleway',sans-serif;font-size:0.75rem;font-weight:600;letter-spacing:0.12em;align-items:center;gap:8px;">&#9776; MENU</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+
+    <div class="hero-eyebrow">Ohio Valley Stables &bull; Hamilton, Ohio</div>
+
+    <h1>The Charley King<em>Stables</em></h1>
+    <p class="hero-subtitle">A tribute to one of harness racing's finest horsemen</p>
+
+    <div class="hero-years">
+      <span>◆</span> 1922 – 1999 <span>◆</span>
+    </div>
+
+    <div class="hero-photo-frame">
+      <img src="Assets/charles&bettie.jpg" alt="Charley and Bettie King" />
+      <p class="hero-caption">Charles &amp; Bettie King</p>
+    </div>
+
+    <div class="hero-dedication">
+      <strong>Dedication</strong>
+      This site is dedicated to the memory of Charles &amp; Bettie King and all of the family
+      and friends who were the <em>Ohio Valley Stables</em>
+    </div>
+
+    <div class="hero-cta">
+      <a href="/biography/" class="btn btn-primary">Read His Story</a>
+      <a href="/guestbook/" class="btn btn-outline">Sign the Guestbook</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CHECKERED DIVIDER -->
+<div class="check-divider"></div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat">
+      <span class="stat-num">200+</span>
+      <span class="stat-label">Horses Trained</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">3</span>
+      <span class="stat-label">World Records (Irvin Paul)</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">$548K</span>
+      <span class="stat-label">Irvin Paul Career Earnings</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">1950–70</span>
+      <span class="stat-label">Years of Racing</span>
+    </div>
+  </div>
+</div>
+
+<!-- BIO SECTION -->
+<section class="section bio-section">
+  <div class="section-inner">
+    <div class="bio-grid">
+      <div class="bio-photo">
+        <img src="Assets/King 019.jpg" alt="Charley King and Irvin Paul at Santa Anita, 1962" />
+        <p class="bio-photo-caption">Charley King and Irvin Paul · Santa Anita, 1962</p>
+      </div>
+      <div class="bio-text">
+        <div class="section-label">Biography</div>
+        <h2 class="section-title">One of Harness Racing's <em>Finest</em></h2>
+        <p>Charley King was one of the top harness horsemen of the 1950s and 60s. Born Charles Lafayette King IV on April 2, 1922 in Rock Castle County, Kentucky, he survived a severe farming accident at 18 that left him in a coma for 29 days — and went on to build one of the most powerful standardbred horse stables of his era.</p>
+        <p>Starting with a partnership with high school classmate Howard Beissinger and a mare named <em>Ladies First</em>, Charley and his wife Bettie built the <em>Ohio Valley Stables</em> into a powerhouse, campaigning horses like Irvin Paul, Adios Marches, and Argo Kid at the biggest tracks in North America — Yonkers, Roosevelt Raceway, Santa Anita, and Hollywood Park.</p>
+        <a href="/biography/" class="bio-link">Read the full biography</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHECKERED DIVIDER (gold) -->
+<div class="check-divider gold"></div>
+
+<!-- HORSES SECTION -->
+<section class="section horses-section">
+  <div class="section-inner">
+    <div class="section-label">The Stable</div>
+    <h2 class="section-title">Notable Horses</h2>
+    <p style="font-family:'Raleway',sans-serif;font-size:0.9rem;color:var(--gray);max-width:520px;line-height:1.7;">From world-record holders to the stars of television, the Charley King Stables produced legends of the sulky.</p>
+
+    <div class="horses-grid">
+
+      <a href="/horses/#irvin-paul" class="horse-card">
+        <img src="Assets/IrvinPaul.jpg" alt="Irvin Paul" class="horse-card-img" />
+        <div class="horse-era">1960s · Pacer</div>
+        <div class="horse-name">Irvin Paul</div>
+        <div class="horse-desc">Three world records. $548,000 in lifetime earnings. Runner-up Standardbred of the Year 1962. The sixth top money-winning pacer in the world.</div>
+      </a>
+
+      <a href="/horses/#ladies-first" class="horse-card">
+        <img src="Assets/LF and Charley.jpg" alt="Ladies First" class="horse-card-img" />
+        <div class="horse-era">1950s · Trotter</div>
+        <div class="horse-name">Ladies First</div>
+        <div class="horse-desc">Charley's first great success — equaled the world record for four-year-old trotting mares and became one of the top earning mares of the 1950s.</div>
+      </a>
+
+      <a href="/horses/#adios-marches" class="horse-card">
+        <img src="Assets/AdiosMarches.jpg" alt="Adios Marches" class="horse-card-img" style="object-position: center 10%;" />
+        <div class="horse-era">1960s · Pacer</div>
+        <div class="horse-name">Adios Marches</div>
+        <div class="horse-desc">Top free-for-all pacer of the mid-1960s with nearly $200,000 in earnings. Competed in the famed 1966 Pace of the Century at Yonkers.</div>
+      </a>
+
+      <a href="/horses/#annette-sue" class="horse-card">
+        <img src="Assets/king 057.jpg" alt="Annette Sue" class="horse-card-img" />
+        <div class="horse-era">1950s · Trotter</div>
+        <div class="horse-name">Annette Sue</div>
+        <div class="horse-desc">Won a record-setting 16 straight races. Combined with Ladies First for over $300,000 in career earnings — more than $2 million in today's money.</div>
+      </a>
+
+      <a href="/horses/#argo-kid" class="horse-card">
+        <img src="Assets/ArgoKid.jpg" alt="Argo Kid" class="horse-card-img" />
+        <div class="horse-era">1960s · Trotter</div>
+        <div class="horse-name">Argo Kid</div>
+        <div class="horse-desc">Nearly $150,000 in earnings before his untimely death at age four. Charley believed he had the potential to be one of the best trotters in the world.</div>
+      </a>
+
+      <a href="/horses/" class="horse-card" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:#f0f5fc;min-height:220px;">
+        <div style="font-size:2rem;margin-bottom:1rem;">🏇</div>
+        <div class="horse-name" style="font-style:normal;font-size:1rem;">And Many More</div>
+        <div class="horse-desc" style="margin-top:0.5rem;">Argo Volo, Mr. Budlong, Ordeal, Sharon Irishman, Rostokop, and 200+ others</div>
+        <span style="margin-top:1.25rem;font-family:'Raleway',sans-serif;font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);">View All Horses →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- GUESTBOOK SECTION -->
+<section class="section guestbook-section">
+  <div class="section-inner">
+    <div class="guestbook-grid">
+      <div>
+        <div class="section-label">Guestbook</div>
+        <h2 class="section-title">Words from <em>Family &amp; Friends</em></h2>
+        <div class="guestbook-entries">
+
+          <div class="guestbook-entry">
+            <div class="entry-name">Alan &amp; Mary Lehn</div>
+            <div class="entry-text">"What a great web page and site, WOW! We really appreciate all the work you did to create this wonderful tribute to your grandparents. We are sure that they must be looking down with pride."</div>
+          </div>
+
+          <div class="guestbook-entry">
+            <div class="entry-name">Kathleen King</div>
+            <div class="entry-text">"This is so so awesome! Bud (Kenny) is so proud of his Dad, Mom, Charlie and John and never stops the wonderful stories of those Crawfordville days. It is an honor to carry this King name."</div>
+          </div>
+
+          <div class="guestbook-entry">
+            <div class="entry-name">Rose Lehn</div>
+            <div class="entry-text">"Absolutely wonderful tribute to your grandparents (my Aunt &amp; Uncle). It really brought back a lot of memories. Thank you for this site."</div>
+          </div>
+
+        </div>
+      </div>
+      <div class="guestbook-form-wrap">
+        <h3>Leave a Message</h3>
+        <p>Did you know Charley or Bettie? Have a memory of the Ohio Valley Stables you'd like to share? We'd love to hear from you.</p>
+        <a href="/guestbook/" class="btn btn-primary" style="color:var(--navy);background:var(--gold);">View &amp; Sign the Guestbook</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGES NAV -->
+<div class="pages-nav">
+  <div class="pages-nav-inner">
+    <h2>Explore the Site</h2>
+    <div class="pages-grid">
+      <a href="/biography/" class="page-tile">
+        <span class="page-tile-icon">📜</span>
+        <span class="page-tile-name">Biography</span>
+        <span class="page-tile-desc">The full life story of Charles Lafayette King IV</span>
+      </a>
+      <a href="/horses/" class="page-tile">
+        <span class="page-tile-icon">🐎</span>
+        <span class="page-tile-name">Horses</span>
+        <span class="page-tile-desc">Profiles of the great horses of the King stables</span>
+      </a>
+      <a href="/photos/" class="page-tile">
+        <span class="page-tile-icon">📷</span>
+        <span class="page-tile-name">Photos</span>
+        <span class="page-tile-desc">The Ohio Valley Stables photo gallery</span>
+      </a>
+      <a href="/recordings/" class="page-tile">
+        <span class="page-tile-icon">🎙️</span>
+        <span class="page-tile-name">Recordings</span>
+        <span class="page-tile-desc">Race calls from Santa Anita and Hollywood Park</span>
+      </a>
+      <a href="/eliking/" class="page-tile">
+        <span class="page-tile-icon">🎖️</span>
+        <span class="page-tile-name">Eli King</span>
+        <span class="page-tile-desc">WWII hero and elder brother of Charley King</span>
+      </a>
+      <a href="/crawfordville/" class="page-tile">
+        <span class="page-tile-icon">🏡</span>
+        <span class="page-tile-name">Crawfordville</span>
+        <span class="page-tile-desc">Sharon Farm Stables, Crawfordville, Georgia</span>
+      </a>
+      <a href="/brooke/" class="page-tile">
+        <span class="page-tile-icon">🐴</span>
+        <span class="page-tile-name">Brooke's Page</span>
+        <span class="page-tile-desc">Carrying on the love of horses</span>
+      </a>
+      <a href="/guestbook/" class="page-tile">
+        <span class="page-tile-icon">✍️</span>
+        <span class="page-tile-name">Guestbook</span>
+        <span class="page-tile-desc">Read messages and leave your own</span>
+      </a>
+      <a href="/contact/" class="page-tile">
+        <span class="page-tile-icon">✉️</span>
+        <span class="page-tile-name">Contact</span>
+        <span class="page-tile-desc">Get in touch with the site maintainer</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-name">The Charley King Stables</p>
+  <p class="footer-text">
+    Site maintained by Wyatt King, grandson of Charley King.<br />
+    A tribute to Charles Lafayette King IV (April 2, 1922 – 1999) and Bettie King.<br />
+    <a href="/contact/">Contact</a>
+  </p>
+</footer>
+
+<div class="check-divider" style="opacity:0.4;"></div>
+
+<script>
+  (function() {
+    var hb = document.getElementById('hamburger');
+    var nl = document.querySelector('.nav-links');
+    if (hb && nl) {
+      hb.addEventListener('click', function() {
+        hb.classList.toggle('open');
+        nl.classList.toggle('open');
+      });
+      nl.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() {
+          hb.classList.remove('open');
+          nl.classList.remove('open');
+        });
+      });
+    }
+  })();
+</script>
+</body>
+</html>
