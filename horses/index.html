@@ -174,6 +174,8 @@
     /* Fix Bettie father section on photos page */
     .bonus-inner > div { grid-template-columns: 1fr !important; }
     .bonus-section .photo-item { max-width: 100%; }
+    /* Collapse side-by-side photo pairs on mobile */
+    .photo-pair-grid { grid-template-columns: 1fr !important; }
   }
 </style>
 </head>
@@ -259,7 +261,7 @@
       </div>
     </div>
     <!-- Extra Ladies First photos side by side -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.5rem;">
+    <div class="photo-pair-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.5rem;">
       <div class="horse-photo">
         <a href="../Assets/king 055.jpg" class="lightbox-trigger" data-caption="Ladies First">
           <img src="../Assets/king 055.jpg" alt="Ladies First" style="width:100%;" />
@@ -405,7 +407,7 @@
       </div>
     </div>
     <!-- Extra Irvin Paul photos in a 2-col row below -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.5rem;">
+    <div class="photo-pair-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.5rem;">
       <div class="horse-photo">
         <a href="../Assets/king 086.jpg" class="lightbox-trigger" data-caption="Irvin Paul record board">
           <img src="../Assets/king 086.jpg" alt="Irvin Paul record board" style="width:100%;" />
@@ -517,7 +519,7 @@
       </div>
     </div>
     <!-- Extra Adios Marches photos side by side -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.5rem;">
+    <div class="photo-pair-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.5rem;">
       <div class="horse-photo">
         <a href="../Assets/King 044.jpg" class="lightbox-trigger" data-caption="Adios Marches">
           <img src="../Assets/King 044.jpg" alt="Adios Marches" style="width:100%;" />
